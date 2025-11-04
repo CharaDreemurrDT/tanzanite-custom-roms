@@ -1,2 +1,25 @@
-# Redmi-Note-14-4G-Custom-ROMs
-A modern, responsive website that gathers and showcases all available custom ROMs for the Redmi Note 14 4G (tanzanite). Includes a detailed flashing guide, screenshots, changelogs, and download links.
+# 📱 **Redmi Note 14 4G Custom ROMs Repository**
+
+Welcome to the **ultimate hub for Redmi Note 14 4G (tanzanite)** custom ROMs!  
+This open-source project provides a **centralized collection of ROMs** — including **screenshots, changelogs, flashing guides, and direct download links** — all in a clean, responsive interface hosted on **GitHub Pages**.
+
+🌐 **Live Website:** [https://yourusername.github.io/Redmi-Note-14-4G-ROMs](https://yourusername.github.io/Redmi-Note-14-4G-ROMs)  
+💬 **Telegram Support:** [@RN14ID](https://t.me/RN14ID)
+
+---
+
+## 🚀 **Features**
+
+✅ **All ROMs in One Place** – Browse all Redmi Note 14 4G custom ROMs in a modern layout.  
+✅ **Smart Filters** – Sort ROMs by Android version and GApps inclusion.  
+✅ **Screenshots & Changelogs** – Preview before downloading or flashing.  
+✅ **Step-by-Step Flashing Guide** – Safe and beginner-friendly installation tutorial.  
+✅ **Fully Responsive** – Works perfectly on desktop and mobile devices.  
+✅ **Secure Direct Links** – Verified Telegram and mirror links for every ROM.  
+
+---
+
+## 🧠 **About the Project**
+
+This project was created to **simplify the custom ROM experience** for **Redmi Note 14 4G** users.  
+Instead of searching multiple Telegram channels or forums, users can **easily explore, compare, and install** custom ROMs in one organized website.
