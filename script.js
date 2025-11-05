@@ -1,3 +1,4 @@
+let modalInitialized = false;
 // ROM Data - Replace with your actual ROM data
 const romsData = [
     {
@@ -219,15 +220,6 @@ let currentRomIndex = 0;
 let currentImageIndex = 0;
 let filteredRoms = [...romsData];
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', function () {
-    if (romsContainer) {
-        initializeROMsPage();
-    }
-    initializeModal();
-});
-
-// Initialize ROMs Page
 function initializeROMsPage() {
     renderROMs(filteredRoms);
     setupFilters();
@@ -490,84 +482,69 @@ function truncateRomTitle(title, maxLength = 50) {
 
 // Update the initializeModal function to handle both types
 function initializeModal() {
-    if (modal) {
-        closeModal.addEventListener('click', closeScreenshotModal);
-        prevBtn.addEventListener('click', function () {
-            if (document.getElementById('ported-roms-container')) {
-                showPortedPreviousImage();
-            } else {
-                showPreviousImage();
-            }
-        });
-        nextBtn.addEventListener('click', function () {
-            if (document.getElementById('ported-roms-container')) {
-                showPortedNextImage();
-            } else {
-                showNextImage();
-            }
-        });
+    if (!modal || modalInitialized) return;
+    modalInitialized = true;
 
-        // Close modal when clicking outside
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                closeScreenshotModal();
-            }
-        });
+    closeModal.addEventListener('click', closeScreenshotModal);
+    prevBtn.addEventListener('click', function () {
+        if (document.getElementById('ported-roms-container')) {
+            showPortedPreviousImage();
+        } else {
+            showPreviousImage();
+        }
+    });
+    nextBtn.addEventListener('click', function () {
+        if (document.getElementById('ported-roms-container')) {
+            showPortedNextImage();
+        } else {
+            showNextImage();
+        }
+    });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', function (e) {
-            if (modal.style.display === 'block') {
-                if (e.key === 'Escape') closeScreenshotModal();
-                if (e.key === 'ArrowLeft') {
-                    if (document.getElementById('ported-roms-container')) {
-                        showPortedPreviousImage();
-                    } else {
-                        showPreviousImage();
-                    }
-                }
-                if (e.key === 'ArrowRight') {
-                    if (document.getElementById('ported-roms-container')) {
-                        showPortedNextImage();
-                    } else {
-                        showNextImage();
-                    }
+    // Close modal when clicking outside
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeScreenshotModal();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (modal.style.display === 'block') {
+            if (e.key === 'Escape') closeScreenshotModal();
+            if (e.key === 'ArrowLeft') {
+                if (document.getElementById('ported-roms-container')) {
+                    showPortedPreviousImage();
+                } else {
+                    showPreviousImage();
                 }
             }
-        });
-    }
+            if (e.key === 'ArrowRight') {
+                if (document.getElementById('ported-roms-container')) {
+                    showPortedNextImage();
+                } else {
+                    showNextImage();
+                }
+            }
+        }
+    });
 }
 
-// Open screenshot modal
-// Open screenshot modal
-// Open screenshot modal
 function openScreenshotModal(romIndex, imageIndex) {
     currentRomIndex = romIndex;
-    
     const rom = romsData[romIndex];
-    
-    // Create combined array: cover photo + screenshots
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
 
-    // Use the provided imageIndex directly - no adjustment needed
-    // The imageIndex parameter is already the correct index in the allImages array
+    const allImages = getCombinedImages(rom);
+
     if (allImages.length > 0) {
-        // Ensure the index is within bounds
         const safeIndex = Math.min(imageIndex, allImages.length - 1);
         modalImage.src = allImages[safeIndex];
-        currentImageIndex = safeIndex; // Store the actual index
+        currentImageIndex = safeIndex;
         updateImageCounter();
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-
-        // On mobile, add a class for fullscreen modal
-        if (window.innerWidth <= 768) {
-            modal.classList.add('mobile-modal');
-        }
+        if (window.innerWidth <= 768) modal.classList.add('mobile-modal');
     }
 }
 // Close screenshot modal
@@ -576,15 +553,25 @@ function closeScreenshotModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Show previous image
-function showPreviousImage() {
-    const rom = romsData[currentRomIndex];
+function getCombinedImages(rom) {
     const allImages = [];
     if (rom.coverPhoto) {
         allImages.push(rom.coverPhoto);
     }
-    allImages.push(...rom.screenshots);
+    // Spread screenshots into the combined array (flatten)
+    if (Array.isArray(rom.screenshots) && rom.screenshots.length > 0) {
+        allImages.push(...rom.screenshots);
+    }
+    return allImages;
+}
 
+// Show previous image
+function showPreviousImage() {
+    const rom = romsData[currentRomIndex];
+    const allImages = getCombinedImages(rom);
+    
+    if (allImages.length === 0) return;
+    
     currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
     modalImage.src = allImages[currentImageIndex];
     updateImageCounter();
@@ -593,12 +580,10 @@ function showPreviousImage() {
 // Show next image
 function showNextImage() {
     const rom = romsData[currentRomIndex];
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
-
+    const allImages = getCombinedImages(rom);
+    
+    if (allImages.length === 0) return;
+    
     currentImageIndex = (currentImageIndex + 1) % allImages.length;
     modalImage.src = allImages[currentImageIndex];
     updateImageCounter();
@@ -607,12 +592,7 @@ function showNextImage() {
 // Update image counter
 function updateImageCounter() {
     const rom = romsData[currentRomIndex];
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
-
+    const allImages = getCombinedImages(rom);
     imageCounter.textContent = `${currentImageIndex + 1}/${allImages.length}`;
 }
 
@@ -1180,18 +1160,11 @@ let currentPortedImageIndex = 0;
 
 function openPortedScreenshotModal(romIndex, imageIndex) {
     currentPortedRomIndex = romIndex;
-    
     const rom = portedRomsData[romIndex];
-    
-    // Create combined array: cover photo + screenshots
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
+
+    const allImages = getCombinedImages(rom);
 
     if (allImages.length > 0) {
-        // Ensure the index is within bounds
         const safeIndex = Math.min(imageIndex, allImages.length - 1);
         modalImage.src = allImages[safeIndex];
         currentPortedImageIndex = safeIndex;
@@ -1199,49 +1172,34 @@ function openPortedScreenshotModal(romIndex, imageIndex) {
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-
-        if (window.innerWidth <= 768) {
-            modal.classList.add('mobile-modal');
-        }
+        if (window.innerWidth <= 768) modal.classList.add('mobile-modal');
     }
 }
 function updatePortedImageCounter() {
     const rom = portedRomsData[currentPortedRomIndex];
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
-
+    const allImages = getCombinedImages(rom);
     imageCounter.textContent = `${currentPortedImageIndex + 1}/${allImages.length}`;
+}
+function showPortedNextImage() {
+    const rom = portedRomsData[currentRomIndex];
+    const allImages = getCombinedImages(rom);
+    if (allImages.length === 0) return;
+
+    currentImageIndex = (currentImageIndex + 1) % allImages.length;
+    modalImage.src = allImages[currentImageIndex];
+    updateImageCounter();
 }
 
 function showPortedPreviousImage() {
-    const rom = portedRomsData[currentPortedRomIndex];
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
+    const rom = portedRomsData[currentRomIndex];
+    const allImages = getCombinedImages(rom);
+    if (allImages.length === 0) return;
 
-    currentPortedImageIndex = (currentPortedImageIndex - 1 + allImages.length) % allImages.length;
-    modalImage.src = allImages[currentPortedImageIndex];
-    updatePortedImageCounter();
+    currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+    modalImage.src = allImages[currentImageIndex];
+    updateImageCounter();
 }
 
-
-function showPortedNextImage() {
-    const rom = portedRomsData[currentPortedRomIndex];
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
-
-    currentPortedImageIndex = (currentPortedImageIndex + 1) % allImages.length;
-    modalImage.src = allImages[currentPortedImageIndex];
-    updatePortedImageCounter();
-}
 
 // Ported ROMs tab switching
 function switchPortedRomTab(button, tabId) {
@@ -1302,11 +1260,3 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
-
-
-
-
-
-
-
-
