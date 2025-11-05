@@ -1459,6 +1459,7 @@ kbd {
 }
 
 /* Additional mobile optimizations for very small screens */
+/* Additional mobile optimizations for very small screens */
 @media (max-width: 380px) {
     .rom-card {
         grid-template-columns: 80px 1fr;
@@ -1480,18 +1481,27 @@ kbd {
         padding: 0.15rem 0.4rem;
     }
     
+    /* Keep 2x2 grid for action buttons */
     .action-buttons-compact {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.3rem;
     }
     
     .square-btn-compact {
         min-height: 32px;
         font-size: 0.55rem;
+        padding: 0.2rem 0.1rem;
     }
     
     .square-btn-compact i {
         font-size: 0.7rem;
+    }
+    
+    /* Ensure buttons don't stack as rectangles */
+    .square-btn-compact span {
+        display: block;
+        line-height: 1;
     }
 }
 
@@ -2024,5 +2034,107 @@ body.dark-mode .ported-rom-card::before {
     .rom-badges {
         flex-direction: row;
         gap: 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    /* Guide page specific fixes */
+    .guide-content {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .guide-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .guide-meta {
+        gap: 0.5rem;
+    }
+    
+    .guide-meta span {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .guide-section {
+        margin: 1.5rem 0;
+    }
+    
+    .guide-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .step-card {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .step-header {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .step-header h3 {
+        font-size: 1rem;
+    }
+    
+    .prerequisites-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .prerequisite-item {
+        padding: 1rem 0.5rem;
+    }
+    
+    .prerequisite-item i {
+        font-size: 2rem;
+    }
+    
+    .code-block {
+        margin: 1rem 0;
+    }
+    
+    .code-block pre {
+        padding: 0.5rem;
+    }
+    
+    .code-block code {
+        font-size: 0.8rem;
+    }
+    
+    .warning-box,
+    .danger-box,
+    .info-box,
+    .success-box {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+    
+    .troubleshooting-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .method-tabs .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        width: 100%;
+        text-align: center;
     }
 }
