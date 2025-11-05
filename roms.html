@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,24 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
                 <h1><i class="fas fa-mobile-alt"></i> Redmi Note 14 4G ROMs</h1>
             </div>
-            <nav>
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="roms.html" class="nav-link active"><i class="fas fa-download"></i> ROMs</a>
-                <a href="guide.html" class="nav-link "><i class="fas fa-book"></i> Guide</a>
-            </nav>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <nav>
+    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="roms.html" class="nav-link"><i class="fas fa-download"></i> ROMs</a>
+    <a href="ported-roms.html" class="nav-link"><i class="fas fa-code-branch"></i> Ported</a>
+    <a href="guide.html" class="nav-link"><i class="fas fa-book"></i> Guide</a>
+</nav>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -45,7 +53,9 @@
                         <option value="no">Without GApps</option>
                     </select>
                 </div>
+                
             </div>
+            
 
             <div class="roms-grid" id="roms-container">
                 <!-- ROM cards will be dynamically loaded here -->
@@ -69,24 +79,23 @@
     </div>
 
     <footer>
-    <div class="container">
-        <div class="footer-content">
-            <p>&copy; 2025 Yousef Sayed - All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://github.com/Joy-S-S/Redmi-Note-14-4G-Custom-ROMs" target="_blank" class="footer-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://t.me/Joouee" target="_blank" class="footer-link">
-                    <i class="fab fa-telegram"></i> Telegram
-                </a>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Yousef Sayed - All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Joy-S-S/Redmi-Note-14-4G-Custom-ROMs" target="_blank"
+                        class="footer-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://t.me/Joouee" target="_blank" class="footer-link">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 
 </html>
-
-
