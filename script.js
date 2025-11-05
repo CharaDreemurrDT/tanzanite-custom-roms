@@ -738,28 +738,15 @@ function toggleIssues(button) {
     icon.classList.toggle('fa-chevron-up');
 }
 
-// Dark Mode Functionality
-// Dark Mode Functionality
 function initDarkMode() {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
 
-    // Check for saved theme preference or prefer OS theme
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply theme immediately to prevent flash
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark-mode');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
-    }
+    // Always start with light mode as default
+    document.body.classList.remove('dark-mode');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'light');
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
@@ -1354,4 +1341,5 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
