@@ -1426,3 +1426,335 @@ nav {
         justify-content: center;
     }
 }
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    /* Fix navbar layout */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Fix ROM cards layout */
+    .roms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+    
+    .rom-card {
+        margin: 0;
+        padding: 1.25rem;
+    }
+    
+    /* Fix ROM meta information */
+    .rom-meta {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    /* Fix action buttons */
+    .download-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .support-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .download-btn, .support-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    /* Fix filter bar */
+    .filter-bar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .filter-group select {
+        width: 100%;
+    }
+    
+    /* Fix hero section */
+    .hero {
+        padding: 3rem 1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    /* Fix device specs grid */
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Fix guide steps */
+    .guide-steps {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .step {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Fix guide content */
+    .guide-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .guide-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .guide-meta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .guide-meta span {
+        justify-content: center;
+    }
+    
+    /* Fix step cards */
+    .step-card {
+        padding: 1.5rem;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    /* Fix code blocks */
+    .code-block pre {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+    
+    .code-block code {
+        font-size: 0.8rem;
+    }
+    
+    /* Fix method tabs */
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Fix screenshots */
+    .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .screenshot-thumb {
+        height: 100px;
+    }
+    
+    /* Fix modal */
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+        max-width: none;
+    }
+    
+    #modal-image {
+        height: 300px;
+    }
+    
+    .modal-nav {
+        bottom: 0.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    /* Fix FAQ */
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 1.25rem 1.25rem;
+    }
+    
+    /* Fix footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Fix container padding */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Fix text overflow */
+    .rom-title {
+        font-size: 1.1rem;
+        word-wrap: break-word;
+    }
+    
+    /* Fix prerequisite grid */
+    .prerequisites-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .prerequisite-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Fix troubleshooting grid */
+    .troubleshooting-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Fix resources grid */
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resource-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        min-width: 80px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .rom-card {
+        padding: 1rem;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-thumb {
+        height: 150px;
+    }
+    
+    #modal-image {
+        height: 250px;
+    }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Improve touch targets */
+button, 
+a, 
+.nav-link, 
+.tab-button, 
+.faq-question, 
+.changelog-toggle,
+.notes-toggle,
+.issues-toggle {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Fix image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve readability on small screens */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Fix code block horizontal scrolling */
+.code-block pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Fix table responsiveness if any tables are added later */
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
