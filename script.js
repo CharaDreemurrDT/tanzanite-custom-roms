@@ -695,35 +695,6 @@ function switchMainScreenshot(romId, screenshotUrl, screenshotIndex, thumbElemen
     };
 }
 
-// Update openScreenshotModal to handle compact layout
-// Open screenshot modal
-function openScreenshotModal(romIndex, imageIndex) {
-    currentRomIndex = romIndex;
-    currentImageIndex = imageIndex;
-
-    const rom = romsData[romIndex];
-    
-    // Create combined array: cover photo + screenshots
-    const allImages = [];
-    if (rom.coverPhoto) {
-        allImages.push(rom.coverPhoto);
-    }
-    allImages.push(...rom.screenshots);
-
-    if (allImages.length > 0) {
-        modalImage.src = allImages[imageIndex];
-        updateImageCounter();
-
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-
-        // On mobile, add a class for fullscreen modal
-        if (window.innerWidth <= 768) {
-            modal.classList.add('mobile-modal');
-        }
-    }
-}
-
 // Toggle notes visibility
 function toggleNotes(button) {
     const content = button.nextElementSibling;
@@ -1332,6 +1303,7 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
 
 
