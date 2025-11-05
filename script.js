@@ -538,12 +538,12 @@ function initializeModal() {
 }
 
 // Open screenshot modal
+// Open screenshot modal
 function openScreenshotModal(romIndex, imageIndex) {
     currentRomIndex = romIndex;
-    currentImageIndex = imageIndex;
-
+    
     const rom = romsData[romIndex];
-
+    
     // Create combined array: cover photo + screenshots
     const allImages = [];
     if (rom.coverPhoto) {
@@ -551,8 +551,14 @@ function openScreenshotModal(romIndex, imageIndex) {
     }
     allImages.push(...rom.screenshots);
 
+    // Adjust the image index to account for cover photo
+    // If cover photo exists, imageIndex 0 refers to cover photo
+    // If no cover photo, imageIndex 0 refers to first screenshot
+    let actualImageIndex = imageIndex;
+    
     if (allImages.length > 0) {
-        modalImage.src = allImages[imageIndex];
+        modalImage.src = allImages[actualImageIndex];
+        currentImageIndex = actualImageIndex; // Store the actual index
         updateImageCounter();
 
         modal.style.display = 'block';
@@ -1204,8 +1210,7 @@ let currentPortedImageIndex = 0;
 
 function openPortedScreenshotModal(romIndex, imageIndex) {
     currentPortedRomIndex = romIndex;
-    currentPortedImageIndex = imageIndex;
-
+    
     const rom = portedRomsData[romIndex];
     
     // Create combined array: cover photo + screenshots
@@ -1215,8 +1220,11 @@ function openPortedScreenshotModal(romIndex, imageIndex) {
     }
     allImages.push(...rom.screenshots);
 
+    let actualImageIndex = imageIndex;
+    
     if (allImages.length > 0) {
-        modalImage.src = allImages[imageIndex];
+        modalImage.src = allImages[actualImageIndex];
+        currentPortedImageIndex = actualImageIndex;
         updatePortedImageCounter();
 
         modal.style.display = 'block';
@@ -1227,7 +1235,6 @@ function openPortedScreenshotModal(romIndex, imageIndex) {
         }
     }
 }
-
 function updatePortedImageCounter() {
     const rom = portedRomsData[currentPortedRomIndex];
     const allImages = [];
@@ -1251,6 +1258,7 @@ function showPortedPreviousImage() {
     modalImage.src = allImages[currentPortedImageIndex];
     updatePortedImageCounter();
 }
+
 
 function showPortedNextImage() {
     const rom = portedRomsData[currentPortedRomIndex];
@@ -1324,6 +1332,7 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
 
 
