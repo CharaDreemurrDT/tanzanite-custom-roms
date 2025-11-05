@@ -539,6 +539,7 @@ function initializeModal() {
 
 // Open screenshot modal
 // Open screenshot modal
+// Open screenshot modal
 function openScreenshotModal(romIndex, imageIndex) {
     currentRomIndex = romIndex;
     
@@ -551,14 +552,13 @@ function openScreenshotModal(romIndex, imageIndex) {
     }
     allImages.push(...rom.screenshots);
 
-    // Adjust the image index to account for cover photo
-    // If cover photo exists, imageIndex 0 refers to cover photo
-    // If no cover photo, imageIndex 0 refers to first screenshot
-    let actualImageIndex = imageIndex;
-    
+    // Use the provided imageIndex directly - no adjustment needed
+    // The imageIndex parameter is already the correct index in the allImages array
     if (allImages.length > 0) {
-        modalImage.src = allImages[actualImageIndex];
-        currentImageIndex = actualImageIndex; // Store the actual index
+        // Ensure the index is within bounds
+        const safeIndex = Math.min(imageIndex, allImages.length - 1);
+        modalImage.src = allImages[safeIndex];
+        currentImageIndex = safeIndex; // Store the actual index
         updateImageCounter();
 
         modal.style.display = 'block';
@@ -570,7 +570,6 @@ function openScreenshotModal(romIndex, imageIndex) {
         }
     }
 }
-
 // Close screenshot modal
 function closeScreenshotModal() {
     modal.style.display = 'none';
@@ -1191,11 +1190,11 @@ function openPortedScreenshotModal(romIndex, imageIndex) {
     }
     allImages.push(...rom.screenshots);
 
-    let actualImageIndex = imageIndex;
-    
     if (allImages.length > 0) {
-        modalImage.src = allImages[actualImageIndex];
-        currentPortedImageIndex = actualImageIndex;
+        // Ensure the index is within bounds
+        const safeIndex = Math.min(imageIndex, allImages.length - 1);
+        modalImage.src = allImages[safeIndex];
+        currentPortedImageIndex = safeIndex;
         updatePortedImageCounter();
 
         modal.style.display = 'block';
@@ -1303,6 +1302,7 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
 
 
