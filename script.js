@@ -308,6 +308,10 @@ function createROMCard(rom) {
         <div class="rom-content-section">
             <!-- Compact Meta Information -->
             <div class="rom-meta-compact">
+            <div class="meta-item-compact">
+                    <i class="fas fa-user"></i>
+                    <span>${rom.developer}</span>
+                </div>
                 <div class="meta-item-compact">
                     <i class="fas ${rom.gapps ? 'fa-check-circle gapps-yes' : 'fa-times-circle gapps-no'}"></i>
                     <span>GApps ${rom.gapps ? '✓' : '✗'}</span>
@@ -315,10 +319,6 @@ function createROMCard(rom) {
                 <div class="meta-item-compact">
                     <i class="fas fa-calendar"></i>
                     <span>${formatDate(rom.date)}</span>
-                </div>
-                <div class="meta-item-compact">
-                    <i class="fas fa-user"></i>
-                    <span>${rom.developer}</span>
                 </div>
                 <div class="meta-item-compact">
                     <i class="fas fa-code-branch"></i>
@@ -1323,6 +1323,7 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
 
 
