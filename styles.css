@@ -135,7 +135,8 @@ nav {
     backdrop-filter: blur(10px);
     z-index: 1000;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 10vh;
     align-items: center;
     gap: 1rem;
 }
@@ -1657,3 +1658,4 @@ kbd {
     border: 0;
 
 }
+
