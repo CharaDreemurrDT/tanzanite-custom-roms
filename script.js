@@ -1099,7 +1099,7 @@ const portedRomsData = [
             "Mobile data, WiFi, Battery and some more styles.",
             "Can install systemui plugins with any restrictions (no use of Mt manager too).",
             "Banking apps working fine",
-            "Added some  features (not there in screenshot).",
+            "Added some  features (not there in screenshot).",
             "Added depth Wallpapers"
         ],
         screenshots: [
@@ -1452,6 +1452,269 @@ function switchPortedRomTab(button, tabId) {
     document.getElementById(tabId).classList.add('active');
 }
 
+// Modules Data
+const customModulesData = [
+    {
+        id: 201,
+        name: "Adaway",
+        author: "Adaway",
+        usage: "AdAway is a free and open source ad blocker for Android.",
+        downloadUrl: "https://github.com/AdAway/AdAway/releases/download/v6.1.4/AdAway-6.1.4-20241027.apk",
+        sourceUrl: "https://github.com/AdAway/AdAway",
+        type: "custom"
+    },
+    {
+        id: 202,
+        name: "InstallerX-Revived",
+        author: "wxxsfxyzm",
+        usage: "A modern and functional Android app installer.",
+        downloadUrl: "https://github.com/wxxsfxyzm/InstallerX-Revived/releases/download/v2.2.7/InstallerX-Revived-offline-v2.2.7.apk",
+        sourceUrl: "https://github.com/wxxsfxyzm/InstallerX-Revived",
+        type: "custom"
+    },
+    {
+        id: 203,
+        name: "Let Me Downgrade",
+        author: "DavidBerdik",
+        usage: "Add support for downgrading apps on Android 12 through 15 QPR1",
+        downloadUrl: "https://github.com/DavidBerdik/Let-Me-Downgrade/releases/tag/1.0.6",
+        sourceUrl: "https://github.com/DavidBerdik/Let-Me-Downgrade",
+        type: "custom"
+    },
+    {
+        id: 204,
+        name: "CorePatch",
+        author: "LSPosed",
+        usage: "Disable signature verification For Android.",
+        downloadUrl: "https://github.com/LSPosed/CorePatch/releases/download/4.7/core-patch-4.7.apk",
+        sourceUrl: "https://github.com/LSPosed/CorePatch",
+        type: "custom"
+    },
+    {
+        id: 205,
+        name: "MacroDroid",
+        author: "ArloSoft",
+        usage: "Easy to use automation app.",
+        downloadUrl: "https://play.google.com/store/search?q=macrodroid&c=apps&pli=1",
+        type: "custom"
+    },
+    {
+        id: 206,
+        name: "Neo Backup",
+        author: "NeoApplications",
+        usage: "Powerful open-source backup solution.",
+        downloadUrl: "https://github.com/NeoApplications/Neo-Backup/releases/download/8.3.14/Neo_Backup_8314_release.apk",
+        sourceUrl: "https://github.com/NeoApplications/Neo-Backup",
+        type: "custom"
+    },
+    {
+        id: 207,
+        name: "Greenify4Magisk",
+        author: "Drsexo",
+        usage: "Integrates Greenify as a privileged system app to enable Boost Mode, enhancing hibernation performance without modifying the ROM.",
+        downloadUrl: "https://github.com/Drsexo/Greenify4Magisk-KSU-Reborn/releases/download/v5.1.1.1/Greenify4Magisk-KSU-Reborn-v5.1.1.1.zip",
+        sourceUrl: "https://github.com/Drsexo/Greenify4Magisk-KSU-Reborn",
+        type: "custom"
+    },
+    {
+        id: 208,
+        name: "Universal GMS Doze",
+        author: "gloeyisk",
+        usage: "Patches Google Play services app and certain processes/services to be able to use battery optimization.",
+        downloadUrl: "https://github.com/gloeyisk/universal-gms-doze/releases/download/1.9.2/gms_1.9.2.zip",
+        sourceUrl: "https://github.com/gloeyisk/universal-gms-doze",
+        type: "custom"
+    },
+];
+
+const stockModulesData = [
+    {
+        id: 301,
+        name: "HyperCeiler",
+        author: "ReChronoRain",
+        usage: "Extensive customizations for HyperOS.",
+        downloadUrl: "https://github.com/ReChronoRain/HyperCeiler/releases/download/2.6.161/HyperCeiler_2.6.161_20250829_4237_release.apk",
+        sourceUrl: "https://github.com/ReChronoRain/HyperCeiler",
+        type: "stock"
+    },
+    {
+        id: 302,
+        name: "Hyper Unlocked",
+        author: "ukriu",
+        usage: "Unlock all high-end features possible to be unlocked on low-end xiaomi devices.",
+        downloadUrl: "https://github.com/ukriu/HyperUnlocked/releases/download/v2.1.0/HyperUnlocked.zip",
+        sourceUrl: "https://github.com/ukriu/HyperUnlocked",
+        type: "stock"
+    },
+    {
+        id: 303,
+        name: "MIUIPerfSaver",
+        author: "rdtoy",
+        usage: "Remove MIUI's performance limit, run app at maximum FPS.",
+        downloadUrl: "https://github.com/rdtoy/MIUIPerfSaver/releases/download/v1.1.0/MIUIPerfSaver_v1.1.0.apk",
+        sourceUrl: "https://github.com/rdtoy/MIUIPerfSaver",
+        type: "stock"
+    },
+    {
+        id: 304,
+        name: "Lite Blur Control Center For HyperOS2",
+        author: "fakerieh",
+        usage: "Control Center Blur for HyperOS2 but LIGHTER without impact Performance",
+        downloadUrl: "https://github.com/fakerieh/Lite-Blur-Control-Center-For-HyperOS2/releases/download/V2.4/LiteBlurHyperOS2-V2.4.zip",
+        sourceUrl: "https://github.com/fakerieh/Lite-Blur-Control-Center-For-HyperOS2",
+        type: "stock"
+    },
+    {
+        id: 305,
+        name: "Big Toast FX HyperOS",
+        author: "Permata",
+        usage: "Fix Big Toast HyperOS after using advance texture",
+        downloadUrl: "https://t.me/permataarchive/12",
+        type: "stock"
+    },
+    {
+        id: 306,
+        name: "HyperOS Launcher",
+        author: "Mods-Center",
+        usage: "Enhanced HyperOS Launcher with features from high-end devices, including customizable app drawer, icon packs, and more.",
+        downloadUrl: "https://github.com/Mods-Center/HyperOS-Launcher/releases/download/V5.1/HyperOS_LauncherV5.1@kashis_cringey_stuffs.zip",
+        sourceUrl: "https://github.com/Mods-Center/HyperOS-Launcher#hyperos-launcher-v5",
+        type: "stock"
+    }
+];
+
+let modulesContainer = document.getElementById('modules-container');
+
+// Initialize Modules Pages
+function initializeModulesPage() {
+    if (!modulesContainer) return;
+    
+    const currentPage = window.location.pathname;
+    let modulesData = [];
+    
+    if (currentPage.includes('custom-modules.html')) {
+        modulesData = customModulesData;
+    } else if (currentPage.includes('stock-modules.html')) {
+        modulesData = stockModulesData;
+    }
+    
+    renderModules(modulesData);
+}
+
+// Render Module Cards
+function renderModules(modules) {
+    if (!modulesContainer) return;
+    
+    modulesContainer.innerHTML = '';
+
+    if (modules.length === 0) {
+        modulesContainer.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search fa-3x"></i>
+                <h3>No Modules Found</h3>
+                <p>Check back later for new modules</p>
+            </div>
+        `;
+        return;
+    }
+
+    modules.forEach(module => {
+        const moduleCard = createModuleCard(module);
+        modulesContainer.appendChild(moduleCard);
+    });
+}
+
+function createModuleCard(module) {
+    const card = document.createElement('div');
+    card.className = 'module-card';
+
+    card.innerHTML = `
+        <div class="module-header">
+            <div class="module-image">
+                <img src="module.png" alt="${module.name}" loading="lazy">
+            </div>
+            <div class="module-title-section">
+                <h3 class="module-title">${module.name}</h3>
+                <div class="module-author">
+                    <i class="fas fa-user"></i>
+                    <span>${module.author}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="module-usage">
+            <p>${module.usage}</p>
+        </div>
+        
+        <div class="module-actions">
+            <div class="module-buttons">
+                <a href="${module.downloadUrl}" class="module-btn download-btn" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download
+                </a>
+                <a href="${module.sourceUrl}" class="module-btn source-btn" target="_blank">
+                    <i class="fas fa-code"></i>
+                    Source
+                </a>
+            </div>
+        </div>
+    `;
+
+    return card;
+}
+
+// Hamburger Menu Functionality
+function initHamburgerMenu() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeMobileNav = document.getElementById('close-mobile-nav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (hamburgerMenu && mobileNav) {
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu
+        if (closeMobileNav) {
+            closeMobileNav.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Close menu when clicking on links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu when clicking outside
+        mobileNav.addEventListener('click', function(e) {
+            if (e.target === mobileNav) {
+                hamburgerMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+}
 
 // Make functions globally available
 window.toggleNotes = toggleNotes;
@@ -1465,9 +1728,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (portedRomsContainer) {
         initializePortedROMsPage();
     }
+    if (modulesContainer) {
+        initializeModulesPage();
+    }
     initializeModal();
     initFAQ();
     initDarkMode();
+    initHamburgerMenu(); // Add this line
 
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1497,5 +1764,3 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
-
-

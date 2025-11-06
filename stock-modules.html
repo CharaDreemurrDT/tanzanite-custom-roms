@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ported ROMs - Redmi Note 14 4G</title>
+    <title>Stock Modules - Redmi Note 14 4G</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
@@ -69,38 +69,22 @@
     <main>
         <div class="container">
             <div class="page-header">
-                <h2>Ported ROMs</h2>
-                <p>Custom ROMs ported from other devices - Use with caution</p>
+                <h2>Stock Modules</h2>
+                <p>Modules for stock ROM</p>
             </div>
 
-            <div class="warning-box">
-                <div class="warning-header">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Important Notice</h3>
-                </div>
-                <p>Ported ROMs are experimental and may have stability issues, bugs, or incomplete features. These are not officially supported and should be used by advanced users only. Always backup your data before flashing.</p>
-            </div>
+            <div class="info-box">
+    <i class="fas fa-info-circle"></i>
+    <div>
+        <strong>Stock Modules Info:</strong> These modules are designed to work with stock ROMs and provide essential functionality without major system modifications. Use the "Source" button to if you want to see the source.
+    </div>
+</div>
 
-            <div class="roms-grid" id="ported-roms-container">
-                <!-- Ported ROM cards will be dynamically loaded here -->
+            <div class="modules-grid" id="modules-container">
+                <!-- Module cards will be dynamically loaded here -->
             </div>
         </div>
     </main>
-
-    <!-- Screenshot Modal -->
-    <div id="screenshot-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <img id="modal-image" src="" alt="ROM Screenshot">
-                <div class="modal-nav">
-                    <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
-                    <span id="image-counter">1/3</span>
-                    <button id="next-btn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <div class="container">
@@ -123,6 +107,3 @@
 </body>
 
 </html>
-
-
-
