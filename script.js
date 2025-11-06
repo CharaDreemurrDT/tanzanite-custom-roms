@@ -1418,23 +1418,23 @@ function updatePortedImageCounter() {
     imageCounter.textContent = `${currentPortedImageIndex + 1}/${allImages.length}`;
 }
 function showPortedNextImage() {
-    const rom = portedRomsData[currentRomIndex];
+    const rom = portedRomsData[currentPortedRomIndex];
     const allImages = getCombinedImages(rom);
     if (allImages.length === 0) return;
 
-    currentImageIndex = (currentImageIndex + 1) % allImages.length;
-    modalImage.src = allImages[currentImageIndex];
-    updateImageCounter();
+    currentPortedImageIndex = (currentPortedImageIndex + 1) % allImages.length;
+    modalImage.src = allImages[currentPortedImageIndex];
+    updatePortedImageCounter();
 }
 
 function showPortedPreviousImage() {
-    const rom = portedRomsData[currentRomIndex];
+    const rom = portedRomsData[currentPortedRomIndex];
     const allImages = getCombinedImages(rom);
     if (allImages.length === 0) return;
 
-    currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
-    modalImage.src = allImages[currentImageIndex];
-    updateImageCounter();
+    currentPortedImageIndex = (currentPortedImageIndex - 1 + allImages.length) % allImages.length;
+    modalImage.src = allImages[currentPortedImageIndex];
+    updatePortedImageCounter();
 }
 
 
@@ -1497,4 +1497,5 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
 
