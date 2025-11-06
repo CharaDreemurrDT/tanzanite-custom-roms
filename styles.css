@@ -104,6 +104,7 @@ nav {
 }
 
 .hamburger-menu span {
+    user-select: none;
     display: block;
     height: 3px;
     width: 100%;
@@ -1733,3 +1734,4 @@ kbd {
     }
 
 }
+
