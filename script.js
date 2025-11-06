@@ -558,14 +558,6 @@ function createROMCard(rom) {
                     <i class="fas ${rom.gapps ? 'fa-check-circle gapps-yes' : 'fa-times-circle gapps-no'}"></i>
                     <span>GApps ${rom.gapps ? '✓' : '✗'}</span>
                 </div>
-                <div class="meta-item-compact">
-                    <i class="fas fa-calendar"></i>
-                    <span>${formatDate(rom.date)}</span>
-                </div>
-                <div class="meta-item-compact">
-                    <i class="fas fa-code-branch"></i>
-                    <span>Stable</span>
-                </div>
             </div>
             
             <!-- Action Buttons - 2x2 Grid -->
@@ -1282,11 +1274,6 @@ function createPortedROMCard(rom) {
                     <i class="fas ${rom.gapps ? 'fa-check-circle gapps-yes' : 'fa-times-circle gapps-no'}"></i>
                     <span>GApps ${rom.gapps ? '✓' : '✗'}</span>
                 </div>
-                <div class="meta-item-compact">
-                    <i class="fas fa-calendar"></i>
-                    <span>${formatDate(rom.date)}</span>
-                </div>
-                
             </div>
             
             <div class="action-buttons-compact">
@@ -1510,3 +1497,4 @@ window.openPortedScreenshotModal = openPortedScreenshotModal;
 window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 window.showPortedNextImage = showPortedNextImage;
+
