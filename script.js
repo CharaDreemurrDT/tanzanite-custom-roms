@@ -7,16 +7,16 @@ const romsData = [
         gapps: false,
         date: "2025-11-7",
         developer: "@noticesa",
-        coverPhoto: "Roms/LunarisAOSP/cover.jpg",
+        coverPhoto: "Roms/LunarisAosp/cover.jpg",
         changelog: [
             "Same as other changelogs",
             "November secpatch",
         ],
         screenshots: [
-            "Roms/LunarisAOSP/1.jpg",
-            "Roms/LunarisAOSP/2.jpg",
-            "Roms/LunarisAOSP/3.jpg",
-            "Roms/LunarisAOSP/4.jpg"
+            "Roms/LunarisAosp/1.jpg",
+            "Roms/LunarisAosp/2.jpg",
+            "Roms/LunarisAosp/3.jpg",
+            "Roms/LunarisAosp/4.jpg"
         ],
         vendorBootUrl: "https://t.me/mt6789dumps/29",
         downloadUrl: "https://t.me/mt6789dumps/28",
@@ -1740,6 +1740,7 @@ window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 
 window.showPortedNextImage = showPortedNextImage;
+
 
 
 
