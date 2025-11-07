@@ -2,6 +2,38 @@ let modalInitialized = false;
 const romsData = [
     {
         id: 1,
+        name: "e/OS - v3.2",
+        androidVersion: "15",
+        gapps: false,
+        date: "2025-10-6",
+        developer: "@Aetherismist",
+        coverPhoto: "Roms/eOS/cover.jpg",
+        changelog: [
+            "Initial Build"
+        ],
+        screenshots: [
+            "Roms/eOSr/1.jpg",
+            "Roms/eOS/2.jpg",
+            "Roms/eOS/3.jpg",
+            "Roms/eOS/4.jpg"
+        ],
+        vendorBootUrl: "https://t.me/ryskuyjournal/9",
+        downloadUrl: "https://t.me/ryskuyjournal/2",
+        romNotes: [
+            "NFC is not tested yet",
+            "Read flashing guide.",
+            "SELinux is enforcing. | Signed build.",
+            "Make sure u've backed up imei. | Battery Full",
+            "Firmware + eng preloader is already shipped"
+        ],
+        knownIssues: [
+            "Wifi with WPA-3 Protocols can't connect",
+            "Switched to 3g from LTE when calling",
+            "You tell me"
+        ]
+    },
+    {
+        id: 2,
         name: "Project Clover | v3.3",
         androidVersion: "16",
         gapps: true,
@@ -40,7 +72,7 @@ const romsData = [
         ]
     },
     {
-        id: 2,
+        id: 3,
         name: "Project InfinityX | v3.4",
         androidVersion: "16",
         gapps: false,
@@ -77,7 +109,7 @@ const romsData = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         name: "AlphaDroid - 4.1",
         androidVersion: "16",
         gapps: false,
@@ -109,7 +141,7 @@ const romsData = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         name: "LumineDroid Official",
         androidVersion: "16",
         gapps: true,
@@ -150,7 +182,7 @@ const romsData = [
         ]
     },
     {
-        id: 5,
+        id: 6,
         name: "CrDroidAndroid 12.2",
         androidVersion: "16",
         gapps: false,
@@ -186,7 +218,7 @@ const romsData = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         name: "AxionOS 2.1",
         androidVersion: "16",
         gapps: false,
@@ -220,7 +252,7 @@ const romsData = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         name: "KomodoOS",
         androidVersion: "15",
         gapps: false,
@@ -249,7 +281,7 @@ const romsData = [
         ]
     },
     {
-        id: 8,
+        id: 9,
         name: "ProjectMatrixx 11.9.0",
         androidVersion: "15",
         gapps: false,
@@ -275,7 +307,7 @@ const romsData = [
         ]
     },
     {
-        id: 9,
+        id: 10,
         name: "LineageOS 22.2",
         androidVersion: "15",
         gapps: false,
@@ -304,7 +336,7 @@ const romsData = [
         ]
     },
     {
-        id: 10,
+        id: 11,
         name: "PixelOS",
         androidVersion: "15",
         gapps: true,
@@ -334,7 +366,7 @@ const romsData = [
         ]
     },
     {
-        id: 11,
+        id: 12,
         name: "YAAP - HOMEMADE",
         androidVersion: "15",
         gapps: true,
@@ -368,7 +400,7 @@ const romsData = [
         ]
     },
     {
-        id: 12,
+        id: 13,
         name: "HorizonDroid 5.4",
         androidVersion: "15",
         gapps: false,
@@ -415,7 +447,7 @@ const romsData = [
         ]
     },
     {
-        id: 13,
+        id: 14,
         name: "DerpFest - 15.2",
         androidVersion: "15",
         gapps: true,
@@ -1677,4 +1709,5 @@ window.switchPortedRomTab = switchPortedRomTab;
 window.showPortedPreviousImage = showPortedPreviousImage;
 
 window.showPortedNextImage = showPortedNextImage;
+
 
